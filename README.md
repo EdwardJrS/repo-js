@@ -127,12 +127,6 @@ Este repositorio de estudio estará dividido en dos bloques:
 Son objetos de los que otros objetos heredan propiedades y métodos.
 
 ## Ejercicios 3ra Etapa
-
-
-## Bloque 2 - Acceder al DOM
-- `document...()` <br>
-- `innerHTML` <br>
-
 ### Ejercicio 1: Excepciones.
 - Crea una funcion que divida dos numeros y use ```try, catch y finally```.
 
@@ -142,6 +136,10 @@ Son objetos de los que otros objetos heredan propiedades y métodos.
 ### Ejercicio 2: Async/Await y Prototipos.
 
 - Crea un ```prototipo``` de Animal con un método para devolver un sonido. Luego, crea un objeto Perro que herede de Animal y usa ```async/await``` para simular la obtención de un sonido de un perro.
+
+## Bloque 2 - Acceder al DOM
+- `document...()` <br>
+- `innerHTML` <br>
 
 ### Ejercicios de refuerzo
 
