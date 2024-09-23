@@ -1,25 +1,32 @@
 # repo-js
 
-## Primera Etapa
-### Tipos de Variables
+Este repositorio de estudio estará dividido en dos bloques:
+
+ - JS Vanilla
+ - Uso del DOM
+
+ **Nota: El primer bloque tiene como objetivo aprender a usar las partes más básicas de JS. Podemos decir que este bloque veremos JS Vanilla.<br>En el segundo bloque tendremos como objetivo empezar a entender y a usar los elementos del DOM, con el fin de lograr un dominio y una base solida de JS en su uso para el desarrollo web.**
+
+## Bloque 1 - Primera Etapa
+## Tipos de Variables
 
 - `var` <br>
 - `let` <br>
 - `const` <br>
 
-### Métodos para captura de datos
+## Métodos para captura de datos
 
 - `prompt()` <br>
 - `confirm()` <br>
 - `alert()` <br>
 
-### Métodos para visualizar datos
+## Métodos para visualizar datos
 
 - `prompt()` <br>
 - `confirm()` <br>
 - `alert()` <br>
 
-### Operadores
+## Operadores
 
 - `Aritméticos` <br>
 - `Asignación` <br>
@@ -27,7 +34,7 @@
 - `Lógicos` <br>
 - `Ternario` **(Operador Condicional)** <br>
 
-### Condicionales
+## Condicionales
 
 - `if` <br>
 - `else if` <br>
@@ -44,8 +51,8 @@
 ### Ejercicio 3: Contador de caracteres
 - Pedir una frase y contar los caracteres sin tener en cuenta los espacios
 
-## Segunda Etapa
-### Arrays y cadenas
+## Bloque 1 - Segunda Etapa
+## Arrays y cadenas
 
 1. **Metodos array** <br><br>
    - `push()` <br>
@@ -95,6 +102,44 @@
 - Crea una función que acepte un array de números y use un bucle for...of para calcular la suma de los elementos.
 - Devuelve el resultado y muéstralo al final.
 
+
+## Bloque 1 - Tercera Etapa
+## Excepciones
+   - `try` <br>
+   - `catch` <br>
+   - `finally` <br>
+
+## Callbaks
+Funciones pasadas como argumentos en otras funciones.
+
+## Promesas
+   - `then` <br>
+   - `catch` <br>
+   - `finally` <br>
+
+## Async / Await
+  - `async/await` <br>
+
+## Fetch
+  - `fetch()` <br>
+  - `then()` <br>
+  - `then()` <br>
+  - `catch()` <br>
+
+## Prototipos
+Son objetos de los que otros objetos heredan propiedades y métodos. 
+
+## Bloque 2 - Acceder al DOM
+- `document...()` <br>
+- `innerHTML` <br>
+
 ### Ejercicios de refuerzo
 
 **Nota: En este apartado vamos a colocar los ejercicios que realicemos por nuestra cuenta.**
+
+
+## Recursos usados
+| Vídeo  | Temas |
+| ------ | ----- |
+|        |       |
+|        |       |
