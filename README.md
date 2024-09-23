@@ -109,9 +109,6 @@ Este repositorio de estudio estará dividido en dos bloques:
    - `catch` <br>
    - `finally` <br>
 
-## Callbaks
-Funciones pasadas como argumentos en otras funciones.
-
 ## Promesas
    - `then` <br>
    - `catch` <br>
@@ -127,11 +124,24 @@ Funciones pasadas como argumentos en otras funciones.
   - `catch()` <br>
 
 ## Prototipos
-Son objetos de los que otros objetos heredan propiedades y métodos. 
+Son objetos de los que otros objetos heredan propiedades y métodos.
+
+## Ejercicios 3ra Etapa
+
 
 ## Bloque 2 - Acceder al DOM
 - `document...()` <br>
 - `innerHTML` <br>
+
+### Ejercicio 1: Excepciones.
+- Crea una funcion que divida dos numeros y use ```try, catch y finally```.
+
+### Ejercicio 2: Promesas y Fetch.
+- Usa ```fetch``` para obtener datos de una API pública. Maneja la respuesta con promesas y muestra los datos en la consola.
+
+### Ejercicio 2: Async/Await y Prototipos.
+
+- Crea un ```prototipo``` de Animal con un método para devolver un sonido. Luego, crea un objeto Perro que herede de Animal y usa ```async/await``` para simular la obtención de un sonido de un perro.
 
 ### Ejercicios de refuerzo
 
