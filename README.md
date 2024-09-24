@@ -151,3 +151,8 @@ Son objetos de los que otros objetos heredan propiedades y métodos.
 | ------ | ----- |
 |        |       |
 |        |       |
+
+## Mejoras a ejercicios
+
+### Ejercicio calculadoras
+Se puede mejorar cuando se ingresen dos string como números

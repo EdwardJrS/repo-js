@@ -28,3 +28,5 @@ if (selectOperation === "a") {
 } else {
     console.log("Debe ingresar una opción válida! Gracias");
 }
+
+// Nota: Se puede mejorar cuando usemos manejos de errores
