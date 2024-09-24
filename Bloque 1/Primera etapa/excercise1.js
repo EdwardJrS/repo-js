@@ -30,3 +30,4 @@ if (selectOperation === "a") {
 }
 
 // Nota: Se puede mejorar cuando usemos manejos de errores
+// y usando Switch Case
