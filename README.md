@@ -141,9 +141,14 @@ Son objetos de los que otros objetos heredan propiedades y métodos.
 - `document...()` <br>
 - `innerHTML` <br>
 
-### Ejercicios de refuerzo
+## Ejercicios de refuerzo
 
 **Nota: En este apartado vamos a colocar los ejercicios que realicemos por nuestra cuenta.**
+
+### Exercism
+
+`FreelancerRates.js` <br>
+`Lasagna.js`
 
 
 ## Recursos usados
