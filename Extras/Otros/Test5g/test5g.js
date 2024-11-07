@@ -18,6 +18,11 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
 
  let orderList = [];
  let productList = [];
+ let today = new Date();
+ const baselineState = "EN ESPERA";
+ const inProgress = "EN PREPARACIÓN";
+ const onDelivery = "EN REPARTO";
+ const delivered = "ENTREGADO";
 
  // CREAR PRODUCTOS
  function createProducts () {
@@ -30,13 +35,13 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
         let product = { // ASIGNA LOS VALORES DE LAS PROPIEDADES DEL OBJETO
             productName: newProductName,
             price: parseFloat(newProductPrice)
-        }
+        };
         productList.push(product); // AGREGA EL OBJETO A LA LISTA
         return alert(`Producto: ${product.productName} creado!`);
     }
  }
 
- function showProducts () { // MOSTRAR EL LISTADO DE PRODUCTOS
+ function showProducts () { // MOSTRAR EL LISTADO DE PRODUCTOS RECIEN REGISTRADOS
     if (productList.length < 1) {
         alert("LA BASE DE DATOS DE PRODUCTOS ESTÁ VACÍA!");
     } else {
@@ -46,13 +51,13 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     }
  }
 
- function takeOrders () {
-    if (!orderState || !customerName || !orderDate || !productName ||  !productQuantity || !totalOrder || !customerAddress || !customerCity || !customerPhoneNumber ){
-        return console.log("Error, verifique los datos del pedido!");
-    } else {
-        return console.log(`Pedido tomado con estado: ${orderState}`);
-    }
+ function searchProducts (producName) {}
+
+ function total (productPrice, productQuantity) { //  CALCULA EL TOTAL DE LA COMPRA POR PRODUCTOS
+    return productQuantity * productPrice;
  }
+
+ function takeOrders () {}
 
  let viewMainMenu = true;
 
