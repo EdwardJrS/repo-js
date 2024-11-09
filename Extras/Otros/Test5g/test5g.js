@@ -32,7 +32,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     if (!newProductName || !newProductPrice){ // VALIDA SI LOS CAMPOS SE ENVIAN VACÍOS
         return alert("Error, verifique los datos del producto!");
     } else {
-        let product = { // ASIGNA LOS VALORES DE LAS PROPIEDADES DEL OBJETO
+        var product = { // ASIGNA LOS VALORES DE LAS PROPIEDADES DEL OBJETO
             productName: newProductName,
             price: parseFloat(newProductPrice)
         };
@@ -51,13 +51,39 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     }
  }
 
- function searchProducts (producName) {}
-
  function total (productPrice, productQuantity) { //  CALCULA EL TOTAL DE LA COMPRA POR PRODUCTOS
     return productQuantity * productPrice;
  }
 
- function takeOrders () {}
+ function takeOrders () {
+    let customerName = prompt("Nombre del cliente");
+    let orderDate = today.toLocaleDateString();
+    let orderProduct = prompt("Producto a ordenar");
+    let customerAddress = prompt("Dirección de pedido");
+    let customerCity = prompt("Ciudad de domicilio");
+    let customerPhone = prompt("Teléfono del cliente");
+    let product = prompt("Producto");
+    let productQty = parseFloat(prompt("Cantidad del producto"));
+    if (!customerName || !orderDate || !orderProduct || !customerAddress || !customerCity || !customerPhone || !product || !productQty) {
+        return alert("TU PEDIDO NO FUE CREADO, INGRESA TODOS LOS DATOS!");
+    } else {
+        let totalOrder = total(product.price, productQty);
+        let order = {
+            orderState: baselineState,
+            finalCustomerName: customerName,
+            finalOrderDate: orderDate,
+            finalOrderProduct: orderProduct,
+            finalCustomerAddress: customerAddress,
+            finalCustomerCity: customerCity,
+            finalCustomerPhone: customerPhone,
+            finalProduc: product,
+            finalQty: productQty,
+            finalTotal: totalOrder
+        }
+        orderList.push(order); // AGREGA EL PEDIDO A LA LISTA
+        return alert(`Orden para: ${order.finalCustomerName} creada!`);
+    }
+ }
 
  let viewMainMenu = true;
 
@@ -70,10 +96,13 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
             break;
         case "2":
             showProducts();
-            viewMainMenu = false;
             break;
         case "3":
             takeOrders();
+            break;
+        case "0":
+            takeOrders();
+            viewMainMenu = false;
             break;
     }
  }
