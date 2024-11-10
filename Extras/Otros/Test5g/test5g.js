@@ -15,7 +15,6 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
   * 
  */
 
-
  let orderList = [];
  let productList = [];
  let today = new Date();
@@ -46,7 +45,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
         alert("LA BASE DE DATOS DE PRODUCTOS ESTÁ VACÍA!");
     } else {
         productList.forEach(product => { // MUESTRA LOS PRODUCTOS DE LA LISTA POR NOMBRE Y PRECIO
-            console.log(`Producto: ${product.productName} Precio: ${product.price}`);
+            alert(`Producto: ${product.productName}\nPrecio: ${product.price}`);
         });
     }
  }
@@ -55,19 +54,18 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     return productQuantity * productPrice;
  }
 
- function takeOrders () {
+ function takeOrders () { // TOMAR ORDEN NUEVA
     let customerName = prompt("Nombre del cliente");
     let orderDate = today.toLocaleDateString();
     let orderProduct = prompt("Producto a ordenar");
     let customerAddress = prompt("Dirección de pedido");
     let customerCity = prompt("Ciudad de domicilio");
     let customerPhone = prompt("Teléfono del cliente");
-    let product = prompt("Producto");
     let productQty = parseFloat(prompt("Cantidad del producto"));
-    if (!customerName || !orderDate || !orderProduct || !customerAddress || !customerCity || !customerPhone || !product || !productQty) {
+    if (!customerName || !orderDate || !orderProduct || !customerAddress || !customerCity || !customerPhone || !productQty) {
         return alert("TU PEDIDO NO FUE CREADO, INGRESA TODOS LOS DATOS!");
     } else {
-        let totalOrder = total(product.price, productQty);
+        let totalOrder = total(productList[0].price, productQty);
         let order = {
             orderState: baselineState,
             finalCustomerName: customerName,
@@ -76,7 +74,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
             finalCustomerAddress: customerAddress,
             finalCustomerCity: customerCity,
             finalCustomerPhone: customerPhone,
-            finalProduc: product,
+            finalProduc: orderProduct,
             finalQty: productQty,
             finalTotal: totalOrder
         }
@@ -85,11 +83,21 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     }
  }
 
+ function showOrders () { // MOSTRAR LISTADO DE PEDIDOS
+    orderList.forEach(order => {
+        alert(`Estado: ${order.orderState}\nNombre cliente: ${order.finalCustomerName}\nFecha del pedido: ${order.finalOrderDate}\nDirección de entrega: ${order.finalCustomerAddress}\nCiudad: ${order.finalCustomerCity}\nTeléfono: ${order.finalCustomerPhone}\nProducto: ${order.finalProduc}\nCantidad: ${order.finalQty}\nTotal: ${order.finalTotal}`);
+    });
+ }
+
+ function changeOrderState () { // CAMBIAR EL ESTADO DE LOS PEDIDOS
+    
+}
+
  let viewMainMenu = true;
 
  while (viewMainMenu) { // MANEJADOR DEL MENÚ PRINCIPAL
     console.log("---------------------------------------- \nBIENVENIDO AL CHUZÓN DE JOSELO DELIVERY \n----------------------------------------");
-    let selectOption = prompt("SELECCIONE UNA OPCIÓN \n1) Crear producto \n2) Consultar productos \n3) Tomar pedido \n4) Consutar pedidos \n0) Salir \n");
+    let selectOption = prompt("SELECCIONE UNA OPCIÓN \n1) Crear producto \n2) Consultar productos \n3) Tomar pedido \n4) Consutar pedidos \n5) Actualizar pedido \n0) Salir \n");
     switch (selectOption) {
         case "1":
             createProducts();
@@ -100,9 +108,16 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
         case "3":
             takeOrders();
             break;
+        case "4":
+            showOrders();
+            break;
+        case "5":
+            changeOrderState();
+            break;
         case "0":
-            takeOrders();
             viewMainMenu = false;
             break;
+        default:
+            viewMainMenu = false;
     }
  }
