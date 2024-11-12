@@ -66,7 +66,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
         return alert("TU PEDIDO NO FUE CREADO, INGRESA TODOS LOS DATOS!");
     } else {
         let totalOrder = total(productList[0].price, productQty);
-        let order = {
+        var order = {
             orderState: baselineState,
             finalCustomerName: customerName,
             finalOrderDate: orderDate,
@@ -89,8 +89,26 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     });
  }
 
- function changeOrderState () { // CAMBIAR EL ESTADO DE LOS PEDIDOS
-    
+ function changeOrderState (order) { // CAMBIAR EL ESTADO DE LOS PEDIDOS
+    if (!order){
+        alert("El pedido no existe");
+    } else {
+        let selectState = prompt("Seleccione el estado:\n 1) EN PREPARACIÓN\n 2) EN REPARTO\n 3) ENTREGADO");
+        switch (selectState) {
+            case "1":
+                order.orderState = inProgress;
+                break;
+            case "2":
+                order.orderState = onDelivery;
+                break;
+            case "3":
+                order.orderState = delivered;
+                break;
+            default:
+                break;
+        }
+        return alert("El pedido fue actualizado, consulte en el listado");
+    }
 }
 
  let viewMainMenu = true;
@@ -112,7 +130,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
             showOrders();
             break;
         case "5":
-            changeOrderState();
+            changeOrderState(orderList[0]);
             break;
         case "0":
             viewMainMenu = false;
