@@ -25,26 +25,35 @@
             <form action="">
                 <h1>Creación de producto</h1>
                 <h3>Nombre:</h3>
-                <input type="text" name="nombre-producto" id="">
+                <input type="text" name="nombre-producto" id="nombre-producto">
                 <h3>Precio:</h3>
-                <input type="text" name="precio-producto" id="">
+                <input type="text" name="precio-producto" id="precio-producto">
+                <button onclick="createProduct()" type="button">Crear producto</button>
+            </form>
+        </div>
+        <div id="container-form-show-products">
+            <form action="">
+                <h1>Buscar productos</h1>
+                <h3>Nombre del producto:</h3>
+                <input type="text" name="nombre-producto" id="nombre-producto-all">
+                <button onclick="getByName()" type="button">Buscar</button>
+                <button onclick="getAllProducts()" type="button">Mostrar todos</button>
             </form>
         </div>
         <div id="container-form-create-order">
-            <form action=""></form>
-            <h1>Tomar pedido</h1>
-            <h3>Nombre del cliente:</h3>
-            <input type="text" name="nombre-cliente" id="">
-            <h3>Artículos:</h3>
-            <input type="text" name="nombre-producto" id="">
-            <h3>Ciudad del pedido:</h3>
-            <input type="text" name="ciudad-pedido" id="">
-            <h3>Dirección:</h3>
-            <input type="text" name="direccion-pedido" id="">
-            <h3>Teléfono del cliente:</h3>
-        </div>
-        <div id="container-form-show-products">
-            <form action=""></form>
+            <form action="">
+                <h1>Tomar pedido</h1>
+                <h3>Nombre del cliente:</h3>
+                <input type="text" name="nombre-cliente" id="">
+                <h3>Artículos:</h3>
+                <input type="text" name="nombre-producto" id="">
+                <h3>Ciudad del pedido:</h3>
+                <input type="text" name="ciudad-pedido" id="">
+                <h3>Dirección:</h3>
+                <input type="text" name="direccion-pedido" id="">
+                <h3>Teléfono del cliente:</h3>
+                <input type="button" value="BUas">
+            </form>
         </div>
         <div id="container-form-show-orders">
             <form action=""></form>

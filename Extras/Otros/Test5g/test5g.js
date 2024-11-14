@@ -24,7 +24,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
  const delivered = "ENTREGADO";
 
  // CREAR PRODUCTOS
- function createProducts () {
+ function createProducts() {
     let newProductName = prompt("Nombre del producto");
     let newProductPrice = parseFloat(prompt("Precio de producto"));
 
@@ -40,7 +40,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     }
  }
 
- function showProducts () { // MOSTRAR EL LISTADO DE PRODUCTOS RECIEN REGISTRADOS
+ function showProducts() { // MOSTRAR EL LISTADO DE PRODUCTOS RECIEN REGISTRADOS
     if (productList.length < 1) {
         alert("LA BASE DE DATOS DE PRODUCTOS ESTÁ VACÍA!");
     } else {
@@ -54,7 +54,7 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     return productQuantity * productPrice;
  }
 
- function takeOrders () { // TOMAR ORDEN NUEVA
+ function takeOrders() { // TOMAR ORDEN NUEVA
     let customerName = prompt("Nombre del cliente");
     let orderDate = today.toLocaleDateString();
     let orderProduct = prompt("Producto a ordenar");
@@ -83,13 +83,13 @@ debe cambiar el estado a EN REPARTO y cuando sea entregado al cliente, se debe c
     }
  }
 
- function showOrders () { // MOSTRAR LISTADO DE PEDIDOS
+ function showOrders() { // MOSTRAR LISTADO DE PEDIDOS
     orderList.forEach(order => {
         alert(`Estado: ${order.orderState}\nNombre cliente: ${order.finalCustomerName}\nFecha del pedido: ${order.finalOrderDate}\nDirección de entrega: ${order.finalCustomerAddress}\nCiudad: ${order.finalCustomerCity}\nTeléfono: ${order.finalCustomerPhone}\nProducto: ${order.finalProduc}\nCantidad: ${order.finalQty}\nTotal: ${order.finalTotal}`);
     });
  }
 
- function changeOrderState (order) { // CAMBIAR EL ESTADO DE LOS PEDIDOS
+ function changeOrderState(order) { // CAMBIAR EL ESTADO DE LOS PEDIDOS
     if (!order){
         alert("El pedido no existe");
     } else {
