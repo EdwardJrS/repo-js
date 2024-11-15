@@ -6,7 +6,7 @@ let orderList = [];
 let productList = [];
 
 function createProduct() {
-    let newProductName = document.getElementById('nombre-producto'.toLocaleLowerCase()).value;
+    let newProductName = document.getElementById('nombre-producto'.toLowerCase()).value;
     let newProductPrice = parseFloat(document.getElementById('precio-producto').value);
 
     if (!newProductName || !newProductPrice){ // VALIDA SI LOS CAMPOS SE ENVIAN VACÍOS
@@ -34,3 +34,15 @@ function createProduct() {
         });
     }
  }
+
+ function getByName() {
+    let nameFound = document.getElementById('nombre-producto-all'.toLowerCase()).value;
+    if (productList.length < 1) {
+        alert("LA BASE DE DATOS DE PRODUCTOS ESTÁ VACÍA!");
+    } else {
+        let filterProducts = productList.filter(producto => producto.productName === nameFound);
+        filterProducts.forEach(producto => {
+            console.log(`Producto: ${producto.productName} Precio: ${producto.price}`);
+        });
+    }
+ } // SE DERE REPLANTEAR ESTA FUNCIÓN, SOLO TRAE EL NOMBRE EXACTO Y NO LOS QUE CONTENGAN ESE NOMBRE POR LO MENOS
