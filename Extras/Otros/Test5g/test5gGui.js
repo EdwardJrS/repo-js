@@ -4,6 +4,10 @@
 
 let orderList = [];
 let productList = [];
+const baselineState = "EN ESPERA";
+const inProgress = "EN PREPARACIÓN";
+const onDelivery = "EN REPARTO";
+const delivered = "ENTREGADO";
 
 function createProduct() {
     let newProductName = document.getElementById('nombre-producto'.toLowerCase()).value;
@@ -36,13 +40,34 @@ function createProduct() {
  }
 
  function getByName() {
-    let nameFound = document.getElementById('nombre-producto-all'.toLowerCase()).value;
+    let nameFound = document.getElementById('nombre-producto-all').value.toLowerCase();
+    if (productList.length < 1) {
+        alert("LA BASE DE DATOS DE PRODUCTOS ESTÁ VACÍA!");
+    } else { // REPASAR FILTER E INCLUDE.
+        let filterProducts = productList.filter(producto => 
+            producto.productName.toLowerCase().includes(nameFound)
+        );
+        if (filterProducts.length > 0) {
+            filterProducts.forEach(producto => {
+                console.log(`Producto: ${producto.productName} Precio: ${producto.price}`);
+            });
+        } else {
+            console.log("No se encontraron productos con ese nombre.");
+        }
+    }
+ }
+
+ function takeOrder() {
+    let customerName = document.getElementById('nombre-cliente').value.toLowerCase();
+    let orderDate = today.toLocaleDateString();
+    let orderProduct = document.getElementById('nombre-producto').value.toLowerCase();
+    let customerAddress = document.getElementById('direccion-pedido').value.toLowerCase();
+    let customerCity = document.getElementById('ciudad-pedido').value.toLowerCase();
+    let customerPhone = document.getElementById('phone-number').value.toLowerCase();
+    let productQty = parseFloat(document.getElementById('cantidad-producto').value);
     if (productList.length < 1) {
         alert("LA BASE DE DATOS DE PRODUCTOS ESTÁ VACÍA!");
     } else {
-        let filterProducts = productList.filter(producto => producto.productName === nameFound);
-        filterProducts.forEach(producto => {
-            console.log(`Producto: ${producto.productName} Precio: ${producto.price}`);
-        });
+
     }
- } // SE DERE REPLANTEAR ESTA FUNCIÓN, SOLO TRAE EL NOMBRE EXACTO Y NO LOS QUE CONTENGAN ESE NOMBRE POR LO MENOS
+ }

@@ -7,7 +7,7 @@
 </head>
 <script src="test5gGui.js"></script>
 <body>
-    <!-- Envabezado -->
+    <!-- Encabezado -->
      <header>
         <nav>
             <ul>
@@ -44,15 +44,18 @@
             <form action="">
                 <h1>Tomar pedido</h1>
                 <h3>Nombre del cliente:</h3>
-                <input type="text" name="nombre-cliente" id="">
-                <h3>Artículos:</h3>
-                <input type="text" name="nombre-producto" id="">
+                <input type="text" name="nombre-cliente" id="nombre-cliente">
+                <h3>Artículo:</h3>
+                <input type="text" name="nombre-producto" id="nombre-producto">
+                <h3>Cantidad:</h3>
+                <input type="text" name="cantidad-producto" id="cantidad-producto">
                 <h3>Ciudad del pedido:</h3>
-                <input type="text" name="ciudad-pedido" id="">
+                <input type="text" name="ciudad-pedido" id="ciudad-pedido">
                 <h3>Dirección:</h3>
-                <input type="text" name="direccion-pedido" id="">
+                <input type="text" name="direccion-pedido" id="direccion-pedido">
                 <h3>Teléfono del cliente:</h3>
-                <input type="button" value="BUas">
+                <input type="text" name="phone-number" id="phone-number">
+                <button onclick="takeOrder()" type="button">Tomar pedido</button>
             </form>
         </div>
         <div id="container-form-show-orders">
