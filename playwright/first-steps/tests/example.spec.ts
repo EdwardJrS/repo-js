@@ -16,3 +16,24 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+test ('TEST_NAME', async ({ page }) => {
+
+  // open browser and go to the web
+  await page.goto('https://www.mercadolibre.com.co')
+
+  // type iphone 
+  await page.locator('input[id=\'cb1-edit\']').fill('iPhone');
+  await page.keyboard.press('Enter');
+
+  // to validate if the title is visible
+  await expect(page.locator('//ol[contains(@class, \'ui-search-layout\')]')).toBeVisible();
+  // await page.pause();
+
+  // Get the text about all items or elements  .allallInnerTexts() return array of strings
+  const titles = await page.locator('//ol[contains(@class, \'ui-search-layout\')]//li//h3').allInnerTexts();
+
+  for (let title of titles){
+    console.log('The title is:', title);
+  }
+});
