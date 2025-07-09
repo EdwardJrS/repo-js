@@ -33,7 +33,26 @@ test ('TEST_NAME', async ({ page }) => {
   // Get the text about all items or elements  .allallInnerTexts() return array of strings
   const titles = await page.locator('//ol[contains(@class, \'ui-search-layout\')]//li//h3').allInnerTexts();
 
+  // to iterate a title into array
   for (let title of titles){
     console.log('The title is:', title);
   }
+
+  // Locator
+  /**
+   * getByPlaceholder - Identificar por medio de su placeholder.
+   * getByAtlText - identificar por medio del texto alternativo.
+   * getByRole - identificar elementos basados en su accesibilidad.
+   */
+
+});
+
+test ('TEST_NAME_2', async ({ page }) => {
+
+  // open browser and go to the web
+  await page.goto('https://www.mercadolibre.com.co');
+  // nth(1) le decimos que es el primer elemento que encuentre.
+  await page.getByRole('link', {name: 'Mis compras'}).nth(1).click();
+
+  await page.pause();
 });
